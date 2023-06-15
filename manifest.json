@@ -1,0 +1,19 @@
+{
+    "manifest_version": 3,
+    "name": "Highlight & Note",
+    "description": "This extension allows the user to highlight text and make notes",
+    "version": "1.0",
+    "permissions": ["storage", "contextMenus","scripting"],
+    "host_permissions": ["<all_urls>"],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "css": ["styles.css"],
+            "js": ["rangy-core.js", "rangy-classapplier.js", "rangy-highlighter.js", "rangy-serializer.js", "rangy-selectionsaverestore.js","content.js"]
+        }
+    ],
+    "icons": { "48": "icon.png" }
+}
